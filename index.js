@@ -2,8 +2,10 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
+
 const app = express();
 const port = process.env.PORT || 3001;
+
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -29,9 +31,13 @@ app.post("/send", async (req, res) => {
         Message: ${message}
         `,
   };
+
   try {
+    // Send email to the recipient
     await transporter.sendMail(mailOptions);
     console.log("Email sent successfully to recipient");
+
+    // Email options for the user response
     const userMailOptions = {
       from: process.env.USER, // your email
       to: email, // user's email
@@ -49,13 +55,15 @@ app.post("/send", async (req, res) => {
     await transporter.sendMail(userMailOptions);
     console.log("Response email sent successfully to user");
 
-    res.json({ message: "Form data received and emails sent successfully" });
+    // Send success response to the client
+    res.json({ success: true, message: "Emails sent successfully" });
   } catch (error) {
     console.error("Error sending email:", error);
-    res.status(500).json({ message: "Error sending email", error });
+    // Send error response to the client
+    res.status(500).json({ success: false, message: "Failed to send emails", error: error.message });
   }
 });
 
 app.listen(port, () => {
-  console.log('Server running');
+  console.log(`Server running on port ${port}`);
 });
