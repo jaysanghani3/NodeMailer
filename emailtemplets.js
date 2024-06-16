@@ -25,7 +25,7 @@ exports.generateEmailTemplate = (fullName) => {
               text-align: center;
           }
           .header {
-              background-color: #007bff;
+              background-color: #1F2937;
               color: #ffffff;
               padding: 10px;
               border-radius: 8px 8px 0 0;
