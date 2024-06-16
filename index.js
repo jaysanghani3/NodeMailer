@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
-const { generateEmailTemplate, generateInquiryEmailTemplate } = require("./emailTemplates");
+const { generateEmailTemplate, generateInquiryEmailTemplate } = require("./emailtemplets.js");
 
 const app = express();
 const port = process.env.PORT || 3001;
