@@ -75,14 +75,14 @@ exports.generateEmailTemplate = (fullName) => {
   <body>
       <div class="container">
           <div class="header">
-              <img src="https://i.ibb.co/7Xyj3PC/logo.png" alt="Elev8Lift Logo">
+              <img src="https://www.elev8lift.in/assets/logo-Do9kJqSL.webp" alt="Elev8Lift Logo">
               <h1>Thank You for Reaching Out!</h1>
           </div>
           <div class="body">
               <p>Dear ${fullName},</p>
               <p>Thank you for contacting Elev8Lift! We appreciate your interest and will get back to you as soon as possible.</p>
               <p>In the meantime, feel free to browse our website or contact us directly for immediate assistance.</p>
-              <a href="https://your-website-link.com" class="cta">Visit Our Website</a>
+              <a href="https://www.elev8lift.in" class="cta">Visit Our Website</a>
           </div>
           <div class="support">
               <p>If you have any further questions or need immediate assistance, please feel free to reach out to us at 
@@ -156,7 +156,7 @@ exports.generateInquiryEmailTemplate = (fullName, email, mobileNo, message) => {
   <body>
       <div class="container">
           <div class="header">
-              <img src="https://i.ibb.co/7Xyj3PC/logo.png" alt="Elev8Lift Logo">
+              <img src="https://www.elev8lift.in/assets/logo-Do9kJqSL.webp" alt="Elev8Lift Logo">
               <h1>New Contact Form Submission</h1>
           </div>
           <div class="body">
