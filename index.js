@@ -21,30 +21,30 @@ app.post("/send", async (req, res) => {
       pass: process.env.PASS,
     },
   });
-  // const transporter1 = nodemailer.createTransport({
-  //   service: process.env.SERVICE,
-  //   auth: {
-  //     user: process.env.USER1,
-  //     pass: process.env.PASS1,
-  //   },
-  // });
+  const transporter1 = nodemailer.createTransport({
+    service: process.env.SERVICE,
+    auth: {
+      user: process.env.USER1,
+      pass: process.env.PASS1,
+    },
+  });
   const mailOptions = {
     from: email,
     to: process.env.USER, // recipient email
     subject: "New Contact Form Submission",
     html: generateInquiryEmailTemplate(fullName, email, mobileNo, message),
   };
-  // const mailOptions1 = {
-  //   from:email,
-  //   to : process.env.USER1,
-  //   subject: "New Contact Form Submission",
-  //   html: generateInquiryEmailTemplate(fullName, email, mobileNo, message),
-  // }
+  const mailOptions1 = {
+    from:email,
+    to : process.env.USER1,
+    subject: "New Contact Form Submission",
+    html: generateInquiryEmailTemplate(fullName, email, mobileNo, message),
+  }
   try {
     // Send email to the recipient
     await transporter.sendMail(mailOptions);
     console.log("Email sent successfully to recipient");
-    // await transporter1.sendMail(mailOptions1);
+    await transporter1.sendMail(mailOptions1);
     // await transporter.sendMail(mailOptions1);
     console.log("Email sent successfully to recipient"); 
     // Email options for the user response
